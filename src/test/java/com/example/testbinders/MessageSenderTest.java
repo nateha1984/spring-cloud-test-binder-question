@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cloud.stream.binder.test.EnableTestBinder;
 import org.springframework.cloud.stream.binder.test.OutputDestination;
 import org.springframework.cloud.stream.binder.test.TestChannelBinderConfiguration;
 import org.springframework.context.annotation.Import;
@@ -14,7 +15,7 @@ import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@ImportAutoConfiguration({TestChannelBinderConfiguration.class})
+@EnableTestBinder
 class MessageSenderTest {
 
     @Autowired
